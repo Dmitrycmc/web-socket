@@ -3,7 +3,11 @@ import * as http from 'http';
 import * as WebSocket from 'ws';
 import {AddressInfo} from "net";
 
+const path = require("path");
+
 const app = express();
+
+app.use(express.static(path.join(__dirname, '..', 'client')));
 
 //initialize a simple http server
 const server = http.createServer(app);

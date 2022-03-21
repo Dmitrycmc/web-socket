@@ -1,16 +1,14 @@
 {
-  "name": "web-socket",
+  "name": "web-socket-server",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Server for WS example app",
+  "main": "src/server.ts",
   "scripts": {
-    "clean": "rm -rf ./dist",
-    "compile": "./node_modules/.bin/tsc",
-    "dev": "npm run clean && npm run compile && node ./dist/server/server.js",
+    "dev": "rm -rf ./build/server && ./node_modules/.bin/tsc && node ./build/server/server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "",
+  "author": "Dmitrycmc",
   "license": "ISC",
   "dependencies": {
     "express": "^4.17.3",

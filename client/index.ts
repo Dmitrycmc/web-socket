@@ -1,0 +1,4 @@
+const a: number = 4;
+
+console.log(a);
+alert("Hello!");

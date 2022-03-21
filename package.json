@@ -1,0 +1,12 @@
+{
+  "name": "web-socket",
+  "version": "1.0.0",
+  "description": "WS example app",
+  "scripts": {
+    "dev": "npm run compile --prefix=client && cp -R server/public/. server/build/client && npm run dev --prefix=server",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Dmitrycmc",
+  "license": "ISC"
+}
