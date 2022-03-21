@@ -20,14 +20,20 @@ export const createWebSocket = (server: http.Server) => {
         ws.send('Hi there, I am a WebSocket server');
 
         let i = 0;
+        let timeoutId: NodeJS.Timeout | undefined;
 
         function schedule() {
-            setTimeout(() => {
+            timeoutId = setTimeout(() => {
                 ws.send(i);
                 console.log('[sent] %s', i++);
                 schedule();
             }, Math.floor(Math.random() * 5000) + 5000);
         }
         schedule();
+
+        ws.on('close', () => {
+            console.log('[closed]');
+            clearTimeout(timeoutId!);
+        })
     });
 };
